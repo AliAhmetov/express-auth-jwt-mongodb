@@ -75,9 +75,6 @@ class authController {
             if(!admin) {
                 return res.status(401).json({message: 'Юзер отсутсвует'})
             }
-            if(!admin.roles.includes('ADMIN') && !admin.roles.includes('MODERATOR')) {
-                return res.status(406).json({message: 'Вы не являетесь админом'})
-            }
             if (!newRole) {
                 return res.status(400).json({message: "Данной роли не существует"})
             }

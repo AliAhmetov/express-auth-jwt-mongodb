@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const {secret} = require('../config')
 
 
-module.exports = function (roles) {
+module.exports = function (roles = ["ADMIN", "USER", "MODERATOR"]) {
     return function (req, res, next) {
         if (req.method === "OPTIONS") {
             next()
