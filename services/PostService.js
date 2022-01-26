@@ -15,10 +15,6 @@ class PostService {
     async delete(branch) {
         return Post.deleteOne(branch)
     }
-    async block(id, isblocked) {
-        const branch = await Post.updateOne({_id: id}, {})
-
-    }
 }
 
 module.exports = new PostService()
